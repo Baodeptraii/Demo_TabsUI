@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Tabs UI</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding-left: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body>div {
+            margin: 5% auto 0;
+            max-width: 720px;
+        }
+
+        .tabs {
+            display: flex;
+            position: relative;
+        }
+
+        .tabs .line {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 6px;
+            border-radius: 15px;
+            background-color: #cf546f;
+            transition: all 0.5s ease;
+            
+        }
+
+        .tab-item {
+            min-width: 80px;
+            padding: 16px 20px 11px 20px;
+            font-size: 20px;
+            text-align: center;
+            color: #c23564;
+            background-color: #f7e7ed;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom: 5px solid transparent;
+            opacity: 0.6;
+            cursor: pointer;
+
+        }
+
+        .tab-icon {
+            font-size: 24px;
+            width: 32px;
+            position: relative;
+            top: 2px;
+        }
+
+        .tab-item:hover {
+            opacity: 1;
+            background-color: rgba(55, 126, 136, 0.05);
+            border-color: rgba(60, 157, 155, 0.1);
+        }
+
+        .tab-item.active {
+            opacity: 1;
+        }
+
+        .tab-content {
+            padding: 28px 0;
+        }
+
+        .tab-pane {
+            color: #000000;
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .tab-pane h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .tab-pane p {
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 5px;
+            animation: slideAnimation 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes slideAnimation {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Tab items -->
+    <div>
+        <div class="tabs">
+            <div class="tab-item active">
+                CR7 - GOAT
+            </div>
+            <div class="tab-item">
+                M10 - GOAT
+            </div>
+            <div class="tab-item">
+                Cụ chanh 
+            </div>
+            <div class="tab-item">
+                Tám nghiệp
+            </div>
+            <div class="tab-item">
+                Cậu Be
+            </div>
+            <div class="line"></div>
+        </div>
+
+        <!-- Tab content -->
+        <div class="tab-content">
+            <div class="tab-pane active">
+                <h2>Cristiano Ronaldo</h2>
+                <p>Cristiano Ronaldo sinh ngày 5 tháng 2 năm 1985,
+                     là một cầu thủ bóng đá chuyên nghiệp người Bồ Đào Nha hiện đang thi đấu ở vị trí tiền đạo 
+                     và là đội trưởng của câu lạc bộ Saudi Pro League Al Nassr và đội tuyển bóng đá quốc gia Bồ Đào Nha.
+                      Được coi là một trong những cầu thủ vĩ đại nhất mọi thời đại, 
+                      Ronaldo là chủ nhân của 5 Quả bóng vàng và 4 Chiếc giày vàng châu Âu. 
+                      Anh đã giành được 33 danh hiệu trong sự nghiệp của mình, 
+                      bao gồm 7 chức vô địch quốc gia, 5 UEFA Champions League, 1 UEFA European Championship và 1 UEFA Nations League
+                </p>
+            </div>
+            <div class="tab-pane">
+                <h2>Lionel Messi</h2>
+                <p>Lionel Messi, sinh ngày 24 tháng 6 năm 1987, 
+                    còn được gọi là Leo Messi, là một cầu thủ bóng đá chuyên nghiệp người Argentina
+                     hiện đang thi đấu ở vị trí tiền đạo và là đội trưởng của câu lạc bộ Major League Soccer Inter Miami
+                      và đội tuyển bóng đá quốc gia Argentina.
+                       Được xem là một trong những cầu thủ vĩ đại nhất mọi thời đại, 
+                       Messi giữ kỷ lục 8 lần giành Quả bóng vàng, 6 lần giành Chiếc giày vàng châu Âu.
+                </p>
+            </div>
+            <div class="tab-pane">
+                <h2>Luka Modrić</h2>
+                <p>Luka Modrić sinh ngày 9 tháng 9 năm 1985 là một cầu thủ bóng đá chuyên nghiệp người Croatia
+                     hiện đang thi đấu cho câu lạc bộ La Liga Real Madrid và là đội trưởng của đội tuyển bóng đá quốc gia Croatia.
+                      Vị trí sở trường của anh là tiền vệ trung tâm, 
+                      nhưng anh còn có thể thi đấu tốt ở vị trí tiền vệ tấn công lẫn tiền vệ phòng ngự.
+                       Anh được xem là một trong những tiền vệ xuất sắc nhất mọi thời đại.
+                </p>
+            </div>
+            <div class="tab-pane">
+                <h2>Toni Kroos</h2>
+                <p>Toni Kroos (sinh ngày 4 tháng 1 năm 1990 ở Greifswald)
+                     là một cầu thủ bóng đá người Đức hiện đang chơi cho câu lạc bộ Real Madrid tại La Liga
+                      ở vị trí tiền vệ trung tâm, nhưng cũng có thể chơi ở vị trí tiền vệ kiến thiết từ tuyến dưới. 
+                      Nổi tiếng với tầm nhìn, kỹ năng chuyền bóng, khả năng sáng tạo, tạt bóng và 
+                      khả năng tạo cơ hội từ các tình huống đá phạt. Anh được coi là một trong những tiền vệ xuất sắc nhất mọi thời đại.
+                </p>
+            </div>
+            <div class="tab-pane">
+                <h2>Jude Bellingham</h2>
+                <p>Jude Victor William Bellingham (sinh ngày 29 tháng 6 năm 2003)
+                     là một cầu thủ bóng đá chuyên nghiệp người Anh hiện đang thi đấu 
+                     ở vị trí tiền vệ cho câu lạc bộ Real Madrid tại La Liga và Đội tuyển bóng đá quốc gia Anh.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const $ = document.querySelector.bind(document);
+        const $$ = document.querySelectorAll.bind(document);
+
+        const tabItems = $$('.tab-item');
+        const tabPanes = $$('.tab-pane');
+
+        const line = $('.tabs .line');
+        // console.log(tabItems,tabPanes,line);
+
+        tabItems.forEach((tab, index) => {
+            const pane = tabPanes[index];
+
+            tab.onclick = function () {
+                $('.tab-item.active').classList.remove('active');
+                $('.tab-pane.active').classList.remove('active');
+
+                line.style.left = this.offsetLeft + "px";
+                line.style.width = this.offsetWidth + "px";
+
+                this.classList.add('active');
+                pane.classList.add('active');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
